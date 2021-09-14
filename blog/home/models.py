@@ -6,6 +6,11 @@ from .helpers import *
 
 # Create your models here.
 
+class Profile(models.Model):
+    user = models.ForeignKey(User , on_delete=models.CASCADE)
+    is_verified = models.BooleanField(default=False)
+    token = models.CharField(max_length=100)
+
 
 
 class BlogModel(models.Model):
