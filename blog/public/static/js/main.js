@@ -8,7 +8,7 @@ function login(){
     var csrf = document.getElementById('csrf').value
 
     if(username == '' && password == ''){
-        alert('You must enter both')
+        alert('Username Password Required ')
     }
 
     var data = {

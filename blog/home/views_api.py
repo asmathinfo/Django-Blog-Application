@@ -68,8 +68,8 @@ class RegisterView(APIView):
             data = request.data
             
             if data.get('username') is None:
-                response['message'] = 'key username not found'
-                raise Exception('key username not found')
+                response['message'] = 'Username not found'
+                raise Exception('Username not found')
             
             if data.get('password') is None:
                 response['message'] = 'key password not found'
@@ -79,8 +79,8 @@ class RegisterView(APIView):
             check_user = User.objects.filter(username = data.get('username')).first()
             
             if check_user:
-                response['message'] = 'username  already taken'
-                raise Exception('username  already taken')
+                response['message'] = 'Username  already taken'
+                raise Exception('Username  already taken')
             
             user_obj = User.objects.create(email = data.get('username') , username = data.get('username'))
             user_obj.set_password(data.get('password'))
